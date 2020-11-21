@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "vec.hpp"
+#include "mogumogu/vec.hpp"
 
 int main() {
   Vec3 v1(0.0f, 1.0f, 2.0f);

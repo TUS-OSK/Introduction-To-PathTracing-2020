@@ -4,7 +4,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "type.hpp"
+#include "mogumogu/type.hpp"
 
 template <unsigned int N>
 class Vec {
