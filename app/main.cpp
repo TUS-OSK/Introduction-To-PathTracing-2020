@@ -1,10 +1,11 @@
 #include <iostream>
-#include <array>
+
 #include "vec.hpp"
 
 int main() {
-  std::array<float, 3> arr{1.0f};
-  std::cout << arr[0] << std::endl;
-  Vec3 v(0);
+  Vec3 v1(0.0f, 1.0f, 2.0f);
+  Vec3 v2(0.0f, 1.0f, 2.0f);
+  Vec3 v3 = v1 + v2;
+  std::cout << v3 << std::endl;
   return 0;
 }
