@@ -9,6 +9,7 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/vec.hpp
     src/vec.cpp
     include/mogumogu/ray.hpp
+    include/mogumogu/intersect-info.hpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
