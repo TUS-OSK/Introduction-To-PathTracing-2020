@@ -13,6 +13,7 @@ class Vec {
 
   template <typename... Real>
   constexpr Vec(Real... args) : v({args...}) {}
+
   constexpr Vec(const std::array<Real, N>&& _v) : v(_v) {}
 
   constexpr Real x() const {
@@ -32,23 +33,94 @@ class Vec {
 // binary operators
 template <unsigned int N>
 inline Vec<N> operator+(const Vec<N>& v1, const Vec<N>& v2) {
-  std::array<Real, N> v;
+  Vec<N> ret;
   for (unsigned int i = 0; i < N; ++i) {
-    v[i] = v1.v[i] + v2.v[i];
+    ret.v[i] = v1.v[i] + v2.v[i];
   }
-  return Vec<N>(v);
+  return ret;
 }
 template <unsigned int N>
 inline Vec<N> operator+(const Vec<N>& v1, Real k) {
-  std::array<Real, N> v;
+  Vec<N> ret;
   for (unsigned int i = 0; i < N; ++i) {
-    v[i] = v1.v[i] + k;
+    ret.v[i] = v1.v[i] + k;
   }
-  return Vec<N>(v);
+  return ret;
 }
 template <unsigned int N>
 inline Vec<N> operator+(Real k, const Vec<N>& v2) {
   return v2 + k;
+}
+
+template <unsigned int N>
+inline Vec<N> operator-(const Vec<N>& v1, const Vec<N>& v2) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] - v2.v[i];
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator-(const Vec<N>& v1, Real k) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] - k;
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator-(Real k, const Vec<N>& v2) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = k - v2.v[i];
+  }
+  return ret;
+}
+
+template <unsigned int N>
+inline Vec<N> operator*(const Vec<N>& v1, const Vec<N>& v2) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] * v2.v[i];
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator*(const Vec<N>& v1, Real k) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] * k;
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator*(Real k, const Vec<N>& v2) {
+  return v2 * k;
+}
+
+template <unsigned int N>
+inline Vec<N> operator/(const Vec<N>& v1, const Vec<N>& v2) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] / v2.v[i];
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator/(const Vec<N>& v1, Real k) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = v1.v[i] / k;
+  }
+  return ret;
+}
+template <unsigned int N>
+inline Vec<N> operator/(Real k, const Vec<N>& v2) {
+  Vec<N> ret;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret.v[i] = k / v2.v[i];
+  }
+  return ret;
 }
 
 // print
