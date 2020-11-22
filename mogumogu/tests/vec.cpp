@@ -26,14 +26,8 @@ TEST(Vec3Test, Div) {
   EXPECT_EQ(6 / Vec3(1, 2, 3), Vec3(6, 3, 2));
 }
 
-TEST(Vec3Test, Length) {
-  EXPECT_EQ(length(Vec3(1, 2, 2)), 3);
-}
+TEST(Vec3Test, Length) { EXPECT_EQ(length(Vec3(1, 2, 2)), 3); }
 
-TEST(Vec3Test, Dot) {
-  EXPECT_EQ(dot(Vec3(1, 2, 3), Vec3(4, 5, 6)), 32);
-}
+TEST(Vec3Test, Dot) { EXPECT_EQ(dot(Vec3(1, 2, 3), Vec3(4, 5, 6)), 32); }
 
-TEST(Vec3Test, Cross) {
-  EXPECT_EQ(cross(Vec3(1, 0, 0), Vec3(0, 1, 0)), Vec3(0, 0, 1));
-}
+TEST(Vec3Test, Cross) { EXPECT_EQ(cross(Vec3(1, 0, 0), Vec3(0, 1, 0)), Vec3(0, 0, 1)); }

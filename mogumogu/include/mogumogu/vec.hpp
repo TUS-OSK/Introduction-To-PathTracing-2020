@@ -14,20 +14,10 @@ class Vec {
   template <typename... T>
   constexpr Vec(T... args) : v({static_cast<Real>(args)...}) {}
 
-  constexpr Vec(const std::array<Real, N>&& _v) : v(_v) {}
-
-  constexpr Real x() const {
-    return v[0];
-  }
-  constexpr Real y() const {
-    return v[1];
-  }
-  constexpr Real z() const {
-    return v[2];
-  }
-  constexpr Real w() const {
-    return v[3];
-  }
+  constexpr Real x() const { return v[0]; }
+  constexpr Real y() const { return v[1]; }
+  constexpr Real z() const { return v[2]; }
+  constexpr Real w() const { return v[3]; }
 
   bool operator==(const Vec<N>& rhs) const {
     bool ret = true;
@@ -175,7 +165,8 @@ inline Real length(const Vec<N>& v) {
 
 // cross product
 inline Vec3 cross(const Vec3& v1, const Vec3& v2) {
-  return Vec3(v1.y() * v2.z() - v1.z() * v2.y(), v1.z() * v2.x() - v1.x() * v2.z(), v1.x() * v2.y() - v2.x() * v1.y());
+  return Vec3(v1.y() * v2.z() - v1.z() * v2.y(), v1.z() * v2.x() - v1.x() * v2.z(),
+              v1.x() * v2.y() - v2.x() * v1.y());
 }
 
 #endif
