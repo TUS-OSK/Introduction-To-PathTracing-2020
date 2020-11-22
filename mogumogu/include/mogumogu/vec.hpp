@@ -28,6 +28,17 @@ class Vec {
   constexpr Real w() const {
     return v[3];
   }
+
+  bool operator==(const Vec<N>& rhs) const {
+    bool ret = true;
+    for (unsigned int i = 0; i < N; ++i) {
+      if (v[i] != rhs.v[i]) {
+        ret = false;
+        break;
+      }
+    }
+    return ret;
+  }
 };
 
 // alias
