@@ -7,10 +7,10 @@ target_include_directories(mogumogu PUBLIC include)
 target_sources(mogumogu PRIVATE
     include/mogumogu/type.hpp
     include/mogumogu/vec.hpp
-    src/vec.cpp
     include/mogumogu/ray.hpp
     include/mogumogu/intersect-info.hpp
     include/mogumogu/film.hpp
+    src/film.cpp
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
 )

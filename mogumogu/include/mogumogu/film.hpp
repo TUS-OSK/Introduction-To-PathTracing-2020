@@ -15,50 +15,33 @@ class Film {
   Real* pixels;
 
   Film(unsigned int _width, unsigned int _height, Real _width_length = 0.036,
-       Real _height_length = 0.024)
-      : width(_width), height(_height) _width_length(_width_length), height_length(_height_length) {
-    pixels = new Real[3 * width * height];
-  }
-  ~Film() { delete[] pixels; }
+       Real _height_length = 0.024);
+  ~Film();
 
   // delete copy constructor
   Film(const Film& film) = delete;
 
   // move constructor
-  Film(const Film&& film) {
-    pixels = film.pixels;
-    film.pixels = nullptr;
-  }
+  Film(Film&& film);
 
   // move = operator
-  Film& operator=(Film&& film) {
-    delete[] film.pixels;
-    pixels = film.pixels;
-    film.pixels = nullptr;
-    return *this;
-  }
+  Film& operator=(Film&& film);
 
-  Vec3 getPixel(unsigned int i, unsigned int j) const {
-    return Vec3(getR(i, j), getG(i, j), getB(i, j));
-  }
-  Vec3 setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
-    setR(i, j, rgb.x());
-    setG(i, j, rgb.y());
-    setB(i, j, rgb.z());
-  }
+  Vec3 getPixel(unsigned int i, unsigned int j) const;
+  void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
 
  private:
-  Real getR(unsigned int i, unsigned int j) { return pixels[computeRIndex(i, j)]; }
-  Real getG(unsigned int i, unsigned int j) { return pixels[computeGIndex(i, j)]; }
-  Real getB(unsigned int i, unsigned int j) { return pixels[computeBIndex(i, j)]; }
+  Real getR(unsigned int i, unsigned int j) const;
+  Real getG(unsigned int i, unsigned int j) const;
+  Real getB(unsigned int i, unsigned int j) const;
 
-  void setR(unsigned int i, unsigned int j, Real value) { pixels[computeRIndex(i, j)] = value; }
-  void setG(unsigned int i, unsigned int j, Real value) { pixels[computeGIndex(i, j)] = value; }
-  void setB(unsigned int i, unsigned int j, Real value) { pixels[computeBIndex(i, j)] = value; }
+  void setR(unsigned int i, unsigned int j, Real value);
+  void setG(unsigned int i, unsigned int j, Real value);
+  void setB(unsigned int i, unsigned int j, Real value);
 
-  unsigned int computeRIndex(unsigned int i, unsigned int j) { return 3 * i + 3 * width * j; }
-  unsigned int computeGIndex(unsigned int i, unsigned int j) { return 3 * i + 3 * width * j + 1; }
-  unsigned int computeBIndex(unsigned int i, unsigned int j) { return 3 * i + 3 * width * j + 2; }
-}
+  unsigned int computeRIndex(unsigned int i, unsigned int j) const;
+  unsigned int computeGIndex(unsigned int i, unsigned int j) const;
+  unsigned int computeBIndex(unsigned int i, unsigned int j) const;
+};
 
 #endif
