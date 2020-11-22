@@ -30,6 +30,11 @@ class Vec {
   }
 };
 
+// alias
+using Vec2 = Vec<2>;
+using Vec3 = Vec<3>;
+using Vec4 = Vec<4>;
+
 // binary operators
 template <unsigned int N>
 inline Vec<N> operator+(const Vec<N>& v1, const Vec<N>& v2) {
@@ -137,9 +142,29 @@ inline std::ostream& operator<<(std::ostream& stream, const Vec<N>& v) {
   return stream;
 }
 
-// alias
-using Vec2 = Vec<2>;
-using Vec3 = Vec<3>;
-using Vec4 = Vec<4>;
+// dot product
+template <unsigned int N>
+inline Real dot(const Vec<N>& v1, const Vec<N>& v2) {
+  Real ret = 0;
+  for (unsigned int i = 0; i < N; ++i) {
+    ret += v1.v[i] * v2.v[i];
+  }
+  return ret;
+}
+
+// length
+template <unsigned int N>
+inline Real length2(const Vec<N>& v) {
+  return dot(v, v);
+}
+template <unsigned int N>
+inline Real length(const Vec<N>& v) {
+  return std::sqrt(length2(v));
+}
+
+// cross product
+inline Vec3 cross(const Vec3& v1, const Vec3& v2) {
+  return Vec3(v1.y() * v2.z() - v1.z() * v2.y(), v1.z() * v2.x() - v1.x() * v2.z(), v1.x() * v2.y() - v2.x() * v1.y());
+}
 
 #endif

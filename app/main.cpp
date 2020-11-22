@@ -3,7 +3,6 @@
 #include "mogumogu/vec.hpp"
 
 int main() {
-  Vec3 v3 = Vec3(0.0f, 1.0f, 2.0f) * Vec3(0.0f, 1.0f, 2.0f);
-  std::cout << v3 << std::endl;
+  std::cout << cross(Vec3(1.0f, 0.0f, 0.0f), Vec3(0.0f, 1.0f, 0.0f)) << std::endl;
   return 0;
 }
