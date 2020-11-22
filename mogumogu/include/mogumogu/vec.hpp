@@ -11,8 +11,8 @@ class Vec {
  public:
   std::array<Real, N> v;
 
-  template <typename... Real>
-  constexpr Vec(Real... args) : v({args...}) {}
+  template <typename... T>
+  constexpr Vec(T... args) : v({static_cast<Real>(args)...}) {}
 
   constexpr Vec(const std::array<Real, N>&& _v) : v(_v) {}
 
