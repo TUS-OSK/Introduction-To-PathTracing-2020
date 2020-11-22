@@ -10,3 +10,10 @@ target_sources(mogumogu PRIVATE
     src/vec.cpp
     include/mogumogu/ray.hpp
 )
+
+option(MOGUMOGU_TEST "Build the tests" ON)
+if(MOGUMOGU_TEST)
+    enable_testing()
+    include(GoogleTest)
+    add_subdirectory(tests)
+endif()
