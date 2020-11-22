@@ -1,8 +1,11 @@
 #include <iostream>
 
+#include "mogumogu/ray.hpp"
 #include "mogumogu/vec.hpp"
 
 int main() {
-  std::cout << cross(Vec3(1.0f, 0.0f, 0.0f), Vec3(0.0f, 1.0f, 0.0f)) << std::endl;
+  std::cout << cross(Vec3(1, 0, 0), Vec3(0, 1, 0)) << std::endl;
+  Ray ray;
+  std::cout << ray << std::endl;
   return 0;
 }
