@@ -11,6 +11,8 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/ray.hpp
     include/mogumogu/intersect-info.hpp
     include/mogumogu/film.hpp
+    include/mogumogu/shape/shape.hpp
+    include/mogumogu/shape/sphere.hpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
