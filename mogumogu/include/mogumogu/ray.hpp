@@ -8,13 +8,14 @@ class Ray {
  public:
   static constexpr float tmin = 1e-5f;
   static constexpr float tmax = 1e9f;
-  Vec3 origin;
-  Vec3 direction;
+  const Vec3 origin;
+  const Vec3 direction;
 
-  Ray() : origin(Vec3(0, 0, 0)), direction(Vec3(0, 0, 0)) {}
-  Ray(const Vec3& _origin, const Vec3& _direction) : origin(_origin), direction(_direction) {}
+  constexpr Ray() : origin(Vec3(0, 0, 0)), direction(Vec3(0, 0, 0)) {}
+  constexpr Ray(const Vec3& _origin, const Vec3& _direction)
+      : origin(_origin), direction(_direction) {}
 
-  Vec3 operator()(float t) const { return origin + t * direction; }
+  constexpr Vec3 operator()(float t) const { return origin + t * direction; }
 };
 
 std::ostream& operator<<(std::ostream& stream, const Ray& ray) {
