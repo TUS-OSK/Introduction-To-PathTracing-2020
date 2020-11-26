@@ -2,6 +2,7 @@
 #define _FILM_H
 #include <vector>
 
+#include "mogumogu/core/vec2.hpp"
 #include "mogumogu/core/vec3.hpp"
 
 class Film {
@@ -11,6 +12,8 @@ class Film {
 
   Vec3 getPixel(unsigned int i, unsigned int j) const;
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
+
+  Vec2 computePosition(const Vec2& uv) const;
 
  private:
   unsigned int width;
