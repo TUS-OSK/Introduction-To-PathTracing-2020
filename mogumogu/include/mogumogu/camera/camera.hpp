@@ -4,6 +4,7 @@
 
 #include "mogumogu/camera/film.hpp"
 #include "mogumogu/core/ray.hpp"
+#include "mogumogu/core/vec2.hpp"
 #include "mogumogu/core/vec3.hpp"
 
 class Camera {
@@ -22,7 +23,7 @@ class Camera {
     camUp = cross(camRight, camForward);
   }
 
-  virtual bool sampleRay(Ray& ray, float& pdf) const = 0;
+  virtual bool sampleRay(const Vec2& uv, Ray& ray, float& pdf) const = 0;
 };
 
 #endif

@@ -7,7 +7,7 @@ class PinholeCamera : public Camera {
   PinholeCamera(const Vec3& _camPos, const Vec3& _camForward, const Film* _film)
       : Camera(_camPos, _camForward, _film) {}
 
-  bool sampleRay(Ray& ray, float& pdf) const { return false; }
+  bool sampleRay(const Vec2& uv, Ray& ray, float& pdf) const { return false; }
 
  private:
   static constexpr float pinhole_distance = 1;
