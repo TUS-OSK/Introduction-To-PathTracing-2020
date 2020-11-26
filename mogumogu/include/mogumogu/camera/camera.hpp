@@ -1,6 +1,8 @@
 #ifndef _CAMERA_H
 #define _CAMERA_H
+#include <memory>
 
+#include "mogumogu/camera/film.hpp"
 #include "mogumogu/core/ray.hpp"
 #include "mogumogu/core/vec3.hpp"
 
@@ -11,9 +13,11 @@ class Camera {
   Vec3 camRight;
   Vec3 camUp;
 
+  const Film* film;
+
  public:
-  Camera(const Vec3& _camPos, const Vec3& _camForward)
-      : camPos(_camPos), camForward(normalize(_camForward)) {
+  Camera(const Vec3& _camPos, const Vec3& _camForward, const Film* _film)
+      : camPos(_camPos), camForward(normalize(_camForward)), film(_film) {
     camRight = cross(camForward, Vec3(0, 1, 0));
     camUp = cross(camRight, camForward);
   }

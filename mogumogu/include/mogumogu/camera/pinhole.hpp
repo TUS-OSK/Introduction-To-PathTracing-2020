@@ -4,7 +4,8 @@
 
 class PinholeCamera : public Camera {
  public:
-  PinholeCamera(const Vec3& _camPos, const Vec3& _camForward) : Camera(_camPos, _camForward) {}
+  PinholeCamera(const Vec3& _camPos, const Vec3& _camForward, const Film* _film)
+      : Camera(_camPos, _camForward, _film) {}
 
   bool sampleRay(Ray& ray, float& pdf) const { return false; }
 
