@@ -3,8 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-class Vec3 {
- public:
+struct Vec3 {
   float elements[3];
 
   constexpr Vec3() : elements{0, 0, 0} {}
