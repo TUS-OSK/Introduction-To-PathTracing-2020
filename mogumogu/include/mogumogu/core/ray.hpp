@@ -18,7 +18,7 @@ class Ray {
   constexpr Vec3 operator()(float t) const { return origin + t * direction; }
 };
 
-std::ostream& operator<<(std::ostream& stream, const Ray& ray) {
+inline std::ostream& operator<<(std::ostream& stream, const Ray& ray) {
   stream << "origin: " << ray.origin << " direction: " << ray.direction;
   return stream;
 }
