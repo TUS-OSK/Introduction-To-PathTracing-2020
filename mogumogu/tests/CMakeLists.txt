@@ -29,4 +29,4 @@ macro(mogumogu_add_test TESTNAME)
     set_target_properties(${TESTNAME} PROPERTIES FOLDER tests)
 endmacro()
 
-mogumogu_add_test(vec vec.cpp)
+mogumogu_add_test(vec3 vec3.cpp)
