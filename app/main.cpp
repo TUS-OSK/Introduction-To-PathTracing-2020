@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "mogumogu/camera/camera.hpp"
 #include "mogumogu/ray.hpp"
 #include "mogumogu/vec3.hpp"
 
