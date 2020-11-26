@@ -55,7 +55,7 @@ inline constexpr Vec2 operator/(float lhs, const Vec2& rhs) {
 
 // print
 inline std::ostream& operator<<(std::ostream& stream, const Vec2& v) {
-  stream << "(" << v.x() << ", " << v.y() << ", " << v.z() << ")";
+  stream << "(" << v.x() << ", " << v.y() << ")";
   return stream;
 }
 
@@ -70,4 +70,5 @@ inline constexpr float length(const Vec2& v) { return std::sqrt(length2(v)); }
 
 // normalize
 inline constexpr Vec2 normalize(const Vec2& v) { return v / length(v); }
+
 #endif
