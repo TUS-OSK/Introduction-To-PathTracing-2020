@@ -1,8 +1,8 @@
 #include "mogumogu/film.hpp"
 
-Film::Film(unsigned int _width, unsigned int _height, Real _width_length, Real _height_length)
+Film::Film(unsigned int _width, unsigned int _height, float _width_length, float _height_length)
     : width(_width), height(_height), width_length(_width_length), height_length(_height_length) {
-  pixels = new Real[3 * width * height];
+  pixels = new float[3 * width * height];
 }
 
 Film::~Film() { delete[] pixels; }
@@ -29,13 +29,19 @@ void Film::setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
   setB(i, j, rgb.z());
 }
 
-Real Film::getR(unsigned int i, unsigned int j) const { return pixels[computeRIndex(i, j)]; }
-Real Film::getG(unsigned int i, unsigned int j) const { return pixels[computeGIndex(i, j)]; }
-Real Film::getB(unsigned int i, unsigned int j) const { return pixels[computeBIndex(i, j)]; }
+float Film::getR(unsigned int i, unsigned int j) const { return pixels[computeRIndex(i, j)]; }
+float Film::getG(unsigned int i, unsigned int j) const { return pixels[computeGIndex(i, j)]; }
+float Film::getB(unsigned int i, unsigned int j) const { return pixels[computeBIndex(i, j)]; }
 
-void Film::setR(unsigned int i, unsigned int j, Real value) { pixels[computeRIndex(i, j)] = value; }
-void Film::setG(unsigned int i, unsigned int j, Real value) { pixels[computeGIndex(i, j)] = value; }
-void Film::setB(unsigned int i, unsigned int j, Real value) { pixels[computeBIndex(i, j)] = value; }
+void Film::setR(unsigned int i, unsigned int j, float value) {
+  pixels[computeRIndex(i, j)] = value;
+}
+void Film::setG(unsigned int i, unsigned int j, float value) {
+  pixels[computeGIndex(i, j)] = value;
+}
+void Film::setB(unsigned int i, unsigned int j, float value) {
+  pixels[computeBIndex(i, j)] = value;
+}
 
 unsigned int Film::computeRIndex(unsigned int i, unsigned int j) const {
   return 3 * i + 3 * width * j;

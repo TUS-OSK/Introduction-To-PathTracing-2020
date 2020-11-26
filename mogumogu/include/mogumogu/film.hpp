@@ -2,20 +2,19 @@
 #define _FILM_H
 #include <vector>
 
-#include "mogumogu/type.hpp"
-#include "mogumogu/vec.hpp"
+#include "mogumogu/vec3.hpp"
 
 class Film {
  public:
   unsigned int width;
   unsigned int height;
-  Real width_length;
-  Real height_length;
+  float width_length;
+  float height_length;
 
-  Real* pixels;
+  float* pixels;
 
-  Film(unsigned int _width, unsigned int _height, Real _width_length = 0.036,
-       Real _height_length = 0.024);
+  Film(unsigned int _width, unsigned int _height, float _width_length = 0.036,
+       float _height_length = 0.024);
   ~Film();
 
   // delete copy constructor
@@ -31,13 +30,13 @@ class Film {
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
 
  private:
-  Real getR(unsigned int i, unsigned int j) const;
-  Real getG(unsigned int i, unsigned int j) const;
-  Real getB(unsigned int i, unsigned int j) const;
+  float getR(unsigned int i, unsigned int j) const;
+  float getG(unsigned int i, unsigned int j) const;
+  float getB(unsigned int i, unsigned int j) const;
 
-  void setR(unsigned int i, unsigned int j, Real value);
-  void setG(unsigned int i, unsigned int j, Real value);
-  void setB(unsigned int i, unsigned int j, Real value);
+  void setR(unsigned int i, unsigned int j, float value);
+  void setG(unsigned int i, unsigned int j, float value);
+  void setB(unsigned int i, unsigned int j, float value);
 
   unsigned int computeRIndex(unsigned int i, unsigned int j) const;
   unsigned int computeGIndex(unsigned int i, unsigned int j) const;
