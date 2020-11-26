@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "mogumogu/vec3.hpp"
+#include "mogumogu/core/vec3.hpp"
 
 TEST(Vec3Test, Add) {
   EXPECT_EQ(Vec3(1, 2, 3) + Vec3(4, 5, 6), Vec3(5, 7, 9));

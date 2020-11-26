@@ -2,7 +2,7 @@
 #define _RAY_H
 #include <iostream>
 
-#include "mogumogu/vec3.hpp"
+#include "mogumogu/core/vec3.hpp"
 
 class Ray {
  public:

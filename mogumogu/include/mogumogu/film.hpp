@@ -2,7 +2,7 @@
 #define _FILM_H
 #include <vector>
 
-#include "mogumogu/vec3.hpp"
+#include "mogumogu/core/vec3.hpp"
 
 class Film {
  public:

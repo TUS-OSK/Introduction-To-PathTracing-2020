@@ -1,7 +1,7 @@
 #ifndef _INTERSECT_INFO_H
 #define _INTERSECT_INFO_H
 
-#include "mogumogu/vec3.hpp"
+#include "mogumogu/core/vec3.hpp"
 
 struct IntersectInfo {
   IntersectInfo() {}

@@ -1,8 +1,8 @@
 #ifndef _CAMERA_H
 #define _CAMERA_H
 
-#include "mogumogu/ray.hpp"
-#include "mogumogu/vec3.hpp"
+#include "mogumogu/core/ray.hpp"
+#include "mogumogu/core/vec3.hpp"
 
 class Camera {
  private:
