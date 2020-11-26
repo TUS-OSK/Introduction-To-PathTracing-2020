@@ -9,8 +9,8 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/core/vec3.hpp
     include/mogumogu/core/ray.hpp
     include/mogumogu/core/intersect-info.hpp
-    include/mogumogu/film.hpp
-    src/film.cpp
+    include/mogumogu/camera/film.hpp
+    src/camera/film.cpp
     include/mogumogu/camera/camera.hpp
     include/mogumogu/camera/pinhole.hpp
     include/mogumogu/shape/shape.hpp
