@@ -1,16 +1,18 @@
 #ifndef _SPHERE_H
 #define _SPHERE_H
 
+#include "mogumogu/core/vec3.hpp"
 #include "mogumogu/shape/shape.hpp"
 
 class Sphere : public Shape {
+ private:
+  const Vec3 center;
+  const float radius;
+
  public:
-  Vec3 center;
-  Real radius;
+  Sphere(const Vec3& center, float radius);
 
-  Sphere(const Vec3& _center, Real _radius) : center(_center), radius(_radius) {}
-
-  bool intersect(const Ray& ray, IntersectInfo& info) const { return false; }
+  bool intersect(const Ray& ray, IntersectInfo& info) const override;
 };
 
 #endif

@@ -18,6 +18,7 @@ target_sources(mogumogu PRIVATE
     src/camera/pinhole.cpp
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
+    src/shape/sphere.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)

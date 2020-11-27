@@ -1,8 +1,8 @@
 #ifndef _SHAPE_H
 #define _SHAPE_H
 
-#include "mogumogu/intersect-info.hpp"
-#include "mogumogu/ray.hpp"
+#include "mogumogu/core/intersect-info.hpp"
+#include "mogumogu/core/ray.hpp"
 
 class Shape {
  public:
