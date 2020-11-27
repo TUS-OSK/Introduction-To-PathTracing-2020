@@ -8,6 +8,14 @@
 
 class Film {
  public:
+  const unsigned int width;
+  const unsigned int height;
+  const float widthLength;
+  const float heightLength;
+  const float diagonalLength;
+
+  std::vector<float> pixels;
+
   Film(unsigned int width, unsigned int height, float widthLength = 0.036f,
        float heightLength = 0.024f);
 
@@ -17,15 +25,6 @@ class Film {
   Vec3 computePosition(const Vec2& uv) const;
 
   void writePPM(const std::string& filename) const;
-
- private:
-  const unsigned int width;
-  const unsigned int height;
-  const float widthLength;
-  const float heightLength;
-  const float diagonalLength;
-
-  std::vector<float> pixels;
 };
 
 #endif
