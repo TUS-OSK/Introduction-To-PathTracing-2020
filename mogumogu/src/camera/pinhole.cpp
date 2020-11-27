@@ -5,5 +5,5 @@ PinholeCamera::PinholeCamera(const Vec3& _camPos, const Vec3& _camForward)
 
 std::tuple<Ray, float> PinholeCamera::sampleRay(const Vec3& pFilm) const {
   const Vec3 pPinhole = camPos + pinholeDistance * camForward;
-  return {Ray(pPinhole, normalize(pPinhole - camPos)), 1.0f};
+  return {Ray(pPinhole, normalize(pPinhole - pFilm)), 1.0f};
 }
