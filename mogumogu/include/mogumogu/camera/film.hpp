@@ -1,5 +1,6 @@
 #ifndef _FILM_H
 #define _FILM_H
+#include <string>
 #include <vector>
 
 #include "mogumogu/core/vec2.hpp"
@@ -14,6 +15,8 @@ class Film {
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
 
   Vec3 computePosition(const Vec2& uv) const;
+
+  void writePPM(const std::string& filename) const;
 
  private:
   unsigned int width;
