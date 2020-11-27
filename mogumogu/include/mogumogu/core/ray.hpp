@@ -11,14 +11,14 @@ class Ray {
   const Vec3 origin;
   const Vec3 direction;
 
-  constexpr Ray() : origin(Vec3(0, 0, 0)), direction(Vec3(0, 0, 0)) {}
-  constexpr Ray(const Vec3& _origin, const Vec3& _direction)
+  constexpr Ray() noexcept : origin(Vec3(0, 0, 0)), direction(Vec3(0, 0, 0)) {}
+  constexpr Ray(const Vec3& _origin, const Vec3& _direction) noexcept
       : origin(_origin), direction(_direction) {}
 
-  constexpr Vec3 operator()(float t) const { return origin + t * direction; }
+  constexpr Vec3 operator()(float t) const noexcept { return origin + t * direction; }
 };
 
-inline std::ostream& operator<<(std::ostream& stream, const Ray& ray) {
+inline std::ostream& operator<<(std::ostream& stream, const Ray& ray) noexcept {
   stream << "origin: " << ray.origin << " direction: " << ray.direction;
   return stream;
 }
