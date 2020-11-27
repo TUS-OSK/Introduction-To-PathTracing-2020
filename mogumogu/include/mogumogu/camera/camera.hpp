@@ -18,7 +18,7 @@ class Camera {
 
   Camera(const Vec3& camPos, const Vec3& camForward, const std::shared_ptr<Film>& film);
 
-  virtual std::tuple<Ray, float> sampleRay(const Vec3& pFilm) const = 0;
+  virtual std::tuple<Ray, float> sampleRay(const Vec2& uv) const = 0;
 };
 
 #endif
