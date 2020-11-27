@@ -5,11 +5,12 @@
 
 class PinholeCamera final : public Camera {
  public:
-  PinholeCamera(const Vec3& _camPos, const Vec3& _camForward);
+  PinholeCamera(const Vec3& camPos, const Vec3& camForward, const std::shared_ptr<Film>& film,
+                float FOV);
 
   std::tuple<Ray, float> sampleRay(const Vec3& pFilm) const override;
 
  private:
-  static constexpr float pinholeDistance = 1.0f;
+  float pinholeDistance;
 };
 #endif
