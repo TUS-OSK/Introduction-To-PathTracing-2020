@@ -13,6 +13,7 @@ target_sources(mogumogu PRIVATE
     src/camera/film.cpp
     include/mogumogu/camera/camera.hpp
     include/mogumogu/camera/pinhole.hpp
+    src/camera/pinhole.cpp
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
 )
