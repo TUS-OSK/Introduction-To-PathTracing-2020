@@ -3,19 +3,20 @@
 #include <memory>
 #include <tuple>
 
+#include "mogumogu/camera/film.hpp"
 #include "mogumogu/core/ray.hpp"
 #include "mogumogu/core/vec2.hpp"
 #include "mogumogu/core/vec3.hpp"
 
 class Camera {
- protected:
-  Vec3 camPos;
-  Vec3 camForward;
-  Vec3 camRight;
-  Vec3 camUp;
-
  public:
-  Camera(const Vec3& _camPos, const Vec3& _camForward);
+  const Vec3 camPos;
+  const Vec3 camForward;
+  const Vec3 camRight;
+  const Vec3 camUp;
+  const std::shared_ptr<Film> film;
+
+  Camera(const Vec3& camPos, const Vec3& camForward, const std::shared_ptr<Film>& film);
 
   virtual std::tuple<Ray, float> sampleRay(const Vec3& pFilm) const = 0;
 };
