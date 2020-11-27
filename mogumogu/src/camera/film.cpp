@@ -22,8 +22,8 @@ Vec3 Film::getPixel(unsigned int i, unsigned int j) const {
 
 void Film::setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
   pixels[3 * i + 3 * width * j] = rgb.x();
-  pixels[3 * i + 3 * width * j] = rgb.y();
-  pixels[3 * i + 3 * width * j] = rgb.z();
+  pixels[3 * i + 3 * width * j + 1] = rgb.y();
+  pixels[3 * i + 3 * width * j + 2] = rgb.z();
 }
 
 Vec3 Film::computePosition(const Vec2& uv) const {
