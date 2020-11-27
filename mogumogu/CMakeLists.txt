@@ -12,6 +12,7 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/camera/film.hpp
     src/camera/film.cpp
     include/mogumogu/camera/camera.hpp
+    src/camera/camera.cpp
     include/mogumogu/camera/pinhole.hpp
     src/camera/pinhole.cpp
     include/mogumogu/shape/shape.hpp

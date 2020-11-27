@@ -15,11 +15,7 @@ class Camera {
   Vec3 camUp;
 
  public:
-  Camera(const Vec3& _camPos, const Vec3& _camForward)
-      : camPos(_camPos), camForward(normalize(_camForward)) {
-    camRight = cross(camForward, Vec3(0, 1, 0));
-    camUp = cross(camRight, camForward);
-  }
+  Camera(const Vec3& _camPos, const Vec3& _camForward);
 
   virtual std::tuple<Ray, float> sampleRay(const Vec3& pFilm) const = 0;
 };
