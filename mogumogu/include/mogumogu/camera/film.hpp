@@ -8,8 +8,8 @@
 
 class Film {
  public:
-  Film(unsigned int _width, unsigned int _height, float _width_length = 0.036f,
-       float _height_length = 0.024f);
+  Film(unsigned int width, unsigned int height, float widthLength = 0.036f,
+       float heightLength = 0.024f);
 
   Vec3 getPixel(unsigned int i, unsigned int j) const;
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
@@ -19,10 +19,11 @@ class Film {
   void writePPM(const std::string& filename) const;
 
  private:
-  unsigned int width;
-  unsigned int height;
-  float width_length;
-  float height_length;
+  const unsigned int width;
+  const unsigned int height;
+  const float widthLength;
+  const float heightLength;
+  const float diagonalLength;
 
   std::vector<float> pixels;
 };

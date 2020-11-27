@@ -4,8 +4,12 @@
 #include <fstream>
 #include <iostream>
 
-Film::Film(unsigned int _width, unsigned int _height, float _width_length, float _height_length)
-    : width(_width), height(_height), width_length(_width_length), height_length(_height_length) {
+Film::Film(unsigned int _width, unsigned int _height, float _widthLength, float _heightLength)
+    : width(_width),
+      height(_height),
+      widthLength(_widthLength),
+      heightLength(_heightLength),
+      diagonalLength(std::sqrt(widthLength * widthLength + heightLength * heightLength)) {
   pixels.resize(3 * width * height);
 }
 
@@ -23,7 +27,7 @@ void Film::setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
 }
 
 Vec3 Film::computePosition(const Vec2& uv) const {
-  return Vec3(0.5f * width_length * uv.x(), 0.5f * width_length * uv.y(), 0);
+  return Vec3(0.5f * widthLength * uv.x(), 0.5f * heightLength * uv.y(), 0);
 }
 
 void Film::writePPM(const std::string& filename) const {
