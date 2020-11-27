@@ -18,6 +18,6 @@ void Film::setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
   pixels[3 * i + 3 * width * j] = rgb.z();
 }
 
-Vec2 Film::computePosition(const Vec2& uv) const {
-  return Vec2(0.5f * width_length * uv.x(), 0.5f * width_length * uv.y());
+Vec3 Film::computePosition(const Vec2& uv) const {
+  return Vec3(0.5f * width_length * uv.x(), 0.5f * width_length * uv.y(), 0);
 }

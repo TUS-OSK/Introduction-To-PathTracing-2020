@@ -13,7 +13,7 @@ class Film {
   Vec3 getPixel(unsigned int i, unsigned int j) const;
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
 
-  Vec2 computePosition(const Vec2& uv) const;
+  Vec3 computePosition(const Vec2& uv) const;
 
  private:
   unsigned int width;

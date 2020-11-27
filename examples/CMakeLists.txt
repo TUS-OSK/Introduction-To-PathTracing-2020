@@ -1,0 +1,2 @@
+add_executable(shoot_ray shoot_ray.cpp)
+target_link_libraries(shoot_ray PRIVATE mogumogu)
