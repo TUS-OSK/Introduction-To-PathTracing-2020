@@ -1,2 +1,5 @@
 add_executable(shoot_ray shoot_ray.cpp)
 target_link_libraries(shoot_ray PRIVATE mogumogu)
+
+add_executable(draw_sphere_normal draw_sphere_normal.cpp)
+target_link_libraries(draw_sphere_normal PRIVATE mogumogu)
