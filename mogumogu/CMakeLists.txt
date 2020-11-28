@@ -9,6 +9,7 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/core/vec3.hpp
     include/mogumogu/core/ray.hpp
     include/mogumogu/core/intersect-info.hpp
+    include/mogumogu/core/constant.hpp
     include/mogumogu/camera/film.hpp
     src/camera/film.cpp
     include/mogumogu/camera/camera.hpp
@@ -17,6 +18,7 @@ target_sources(mogumogu PRIVATE
     src/camera/pinhole.cpp
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
+    src/shape/sphere.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)

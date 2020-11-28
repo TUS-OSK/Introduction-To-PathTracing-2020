@@ -1,12 +1,13 @@
 #ifndef _SHAPE_H
 #define _SHAPE_H
+#include <optional>
 
-#include "mogumogu/intersect-info.hpp"
-#include "mogumogu/ray.hpp"
+#include "mogumogu/core/intersect-info.hpp"
+#include "mogumogu/core/ray.hpp"
 
 class Shape {
  public:
-  virtual bool intersect(const Ray& ray, IntersectInfo& info) const = 0;
+  virtual std::optional<IntersectInfo> intersect(const Ray& ray) const = 0;
 };
 
 #endif
