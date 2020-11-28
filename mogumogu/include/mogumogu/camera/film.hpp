@@ -16,13 +16,11 @@ class Film {
 
   std::vector<float> pixels;
 
-  Film(unsigned int width, unsigned int height, float widthLength = 0.036f,
+  Film(unsigned int width, unsigned int height, float widthLength = 0.024f,
        float heightLength = 0.024f);
 
   Vec3 getPixel(unsigned int i, unsigned int j) const;
   void setPixel(unsigned int i, unsigned int j, const Vec3& rgb);
-
-  Vec3 computePosition(const Vec2& uv) const;
 
   void writePPM(const std::string& filename) const;
 };

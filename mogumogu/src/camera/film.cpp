@@ -26,10 +26,6 @@ void Film::setPixel(unsigned int i, unsigned int j, const Vec3& rgb) {
   pixels[3 * i + 3 * width * j + 2] = rgb.z();
 }
 
-Vec3 Film::computePosition(const Vec2& uv) const {
-  return Vec3(0.5f * widthLength * uv.x(), 0.5f * heightLength * uv.y(), 0);
-}
-
 void Film::writePPM(const std::string& filename) const {
   std::ofstream file(filename);
   if (!file) {

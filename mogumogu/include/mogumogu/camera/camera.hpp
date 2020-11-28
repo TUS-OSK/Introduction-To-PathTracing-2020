@@ -18,6 +18,8 @@ class Camera {
 
   Camera(const Vec3& camPos, const Vec3& camForward, const std::shared_ptr<Film>& film);
 
+  Vec3 computePositionOnFilm(const Vec2& uv) const noexcept;
+
   virtual std::tuple<Ray, float> sampleRay(const Vec2& uv) const = 0;
 };
 
