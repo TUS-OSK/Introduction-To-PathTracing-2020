@@ -12,7 +12,7 @@ class Sphere : public Shape {
  public:
   Sphere(const Vec3& center, float radius);
 
-  bool intersect(const Ray& ray, IntersectInfo& info) const override;
+  std::optional<IntersectInfo> intersect(const Ray& ray) const override;
 };
 
 #endif
