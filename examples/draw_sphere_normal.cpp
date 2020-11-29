@@ -18,14 +18,14 @@ int main() {
 
       const auto info = sphere.intersect(ray);
       if (info) {
-        camera.film->setPixel(i, j, 0.5f * (info->hitNormal + 1.0f));
+        camera.setPixel(i, j, 0.5f * (info->hitNormal + 1.0f));
       } else {
-        camera.film->setPixel(i, j, Vec3(0));
+        camera.setPixel(i, j, Vec3(0));
       }
     }
   }
 
-  camera.film->writePPM("output.ppm");
+  camera.writePPM("output.ppm");
 
   return 0;
 }
