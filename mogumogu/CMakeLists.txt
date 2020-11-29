@@ -10,20 +10,27 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/core/ray.hpp
     include/mogumogu/core/intersect-info.hpp
     include/mogumogu/core/constant.hpp
+
     include/mogumogu/camera/film.hpp
     src/camera/film.cpp
     include/mogumogu/camera/camera.hpp
     src/camera/camera.cpp
     include/mogumogu/camera/pinhole.hpp
     src/camera/pinhole.cpp
+
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
     src/shape/sphere.cpp
+
     include/mogumogu/material/material.hpp
     include/mogumogu/material/lambert.hpp
     src/material/lambert.cpp
+
     include/mogumogu/core/primitive.hpp
     src/core/primitive.cpp
+
+    include/mogumogu/accel/accel.hpp
+    src/accel/accel.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)

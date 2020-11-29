@@ -1,7 +1,19 @@
 #ifndef _ACCEL_H
 #define _ACCEL_H
+#include <optional>
 #include <vector>
 
-class Accel {};
+#include "mogumogu/core/primitive.hpp"
+
+class Accel {
+ private:
+  std::vector<Primitive> primitives;
+
+  Accel();
+
+  void addPrimitive(const Primitive& primitive);
+
+  std::optional<IntersectInfo> intersect(const Ray& ray) const;
+};
 
 #endif
