@@ -20,6 +20,8 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/shape/sphere.hpp
     src/shape/sphere.cpp
     include/mogumogu/material/material.hpp
+    include/mogumogu/material/lambert.hpp
+    src/material/lambert.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
