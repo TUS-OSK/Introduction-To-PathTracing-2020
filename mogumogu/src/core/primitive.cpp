@@ -5,5 +5,12 @@ Primitive::Primitive(const std::shared_ptr<Shape>& _shape,
     : shape(_shape), material(_material) {}
 
 std::optional<IntersectInfo> Primitive::intersect(const Ray& ray) const {
-  return shape->intersect(ray);
+  auto info = shape->intersect(ray);
+
+  // set intersect primitive
+  if (info) {
+    info->hitPrimitive = this;
+  }
+
+  return info;
 }
