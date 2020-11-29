@@ -13,11 +13,11 @@ int main() {
       const float u = (2.0f * i - width) / height;
       const float v = (2.0f * j - height) / height;
       const auto [ray, pdf] = camera.sampleRay(Vec2(u, v));
-      camera.film->setPixel(i, j, 0.5f * (ray.direction + 1.0f));
+      camera.setPixel(i, j, 0.5f * (ray.direction + 1.0f));
     }
   }
 
-  camera.film->writePPM("output.ppm");
+  camera.writePPM("output.ppm");
 
   return 0;
 }

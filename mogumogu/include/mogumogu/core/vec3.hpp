@@ -14,6 +14,8 @@ struct Vec3 {
   constexpr float y() const { return elements[1]; }
   constexpr float z() const { return elements[2]; }
 
+  Vec3 operator-() const noexcept { return Vec3(-x(), -y(), -z()); }
+
   constexpr bool operator==(const Vec3& v) const noexcept {
     return x() == v.x() && y() == v.y() && z() == v.z();
   }

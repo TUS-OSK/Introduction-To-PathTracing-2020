@@ -13,6 +13,12 @@ Film::Film(unsigned int _width, unsigned int _height, float _widthLength, float 
   pixels.resize(3 * width * height);
 }
 
+unsigned int Film::getWidth() const { return width; }
+unsigned int Film::getHeight() const { return height; }
+float Film::getWidthLength() const { return widthLength; }
+float Film::getHeightLength() const { return heightLength; }
+float Film::getDiagonalLength() const { return diagonalLength; }
+
 Vec3 Film::getPixel(unsigned int i, unsigned int j) const {
   const float R = pixels[3 * i + 3 * width * j];
   const float G = pixels[3 * i + 3 * width * j + 1];
