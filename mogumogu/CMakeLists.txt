@@ -22,6 +22,8 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/material/material.hpp
     include/mogumogu/material/lambert.hpp
     src/material/lambert.cpp
+    include/mogumogu/core/primitive.hpp
+    src/core/primitive.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
