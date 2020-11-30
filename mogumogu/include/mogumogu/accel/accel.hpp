@@ -6,9 +6,10 @@
 #include "mogumogu/core/primitive.hpp"
 
 class Accel {
- private:
+ protected:
   std::vector<Primitive> primitives;
 
+ public:
   Accel();
 
   void addPrimitive(const Primitive& primitive);
