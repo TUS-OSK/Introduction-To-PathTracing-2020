@@ -4,10 +4,12 @@
 #include "mogumogu/shape/sphere.hpp"
 
 int main() {
-  constexpr int width = 512;
-  constexpr int height = 512;
+  const int width = 512;
+  const int height = 512;
+
   const auto film = std::make_shared<Film>(width, height);
   PinholeCamera camera(Vec3(0, 0, 3), Vec3(0, 0, -1), film, PI_DIV_2);
+
   Sphere sphere(Vec3(0, 0, 0), 1.0);
 
   for (int j = 0; j < height; ++j) {

@@ -7,12 +7,13 @@
 #include "mogumogu/shape/sphere.hpp"
 
 int main() {
-  constexpr int width = 512;
-  constexpr int height = 512;
+  const int width = 512;
+  const int height = 512;
   const Vec3 lightDir = normalize(Vec3(1, 1, 1));
 
   const auto film = std::make_shared<Film>(width, height);
   PinholeCamera camera(Vec3(0, 0, 3), Vec3(0, 0, -1), film, PI_DIV_2);
+
   Sphere sphere(Vec3(0, 0, 0), 1.0);
   Lambert lambert(Vec3(0.2, 0.8, 0.2));
 
