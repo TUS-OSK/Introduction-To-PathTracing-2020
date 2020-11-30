@@ -13,7 +13,7 @@ class Accel {
 
   void addPrimitive(const Primitive& primitive);
 
-  std::optional<IntersectInfo> intersect(const Ray& ray) const;
+  virtual std::optional<IntersectInfo> intersect(const Ray& ray) const = 0;
 };
 
 #endif
