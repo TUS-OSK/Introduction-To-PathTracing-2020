@@ -7,7 +7,7 @@ struct Vec3 {
   float elements[3];
 
   constexpr Vec3() noexcept : elements{0, 0, 0} {}
-  constexpr Vec3(float _x) noexcept : elements{_x, _x, _x} {}
+  constexpr explicit Vec3(float _x) noexcept : elements{_x, _x, _x} {}
   constexpr Vec3(float _x, float _y, float _z) noexcept : elements{_x, _y, _z} {}
 
   constexpr float x() const { return elements[0]; }

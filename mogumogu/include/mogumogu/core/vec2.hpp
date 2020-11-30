@@ -7,7 +7,7 @@ struct Vec2 {
   float elements[2];
 
   constexpr Vec2() noexcept : elements{0, 0} {}
-  constexpr Vec2(float _x) noexcept : elements{_x, _x} {}
+  constexpr explicit Vec2(float _x) noexcept : elements{_x, _x} {}
   constexpr Vec2(float _x, float _y) noexcept : elements{_x, _y} {}
 
   constexpr float x() const { return elements[0]; }
