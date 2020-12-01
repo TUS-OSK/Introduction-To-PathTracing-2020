@@ -40,7 +40,8 @@ int main() {
         const Ray shadowRay(info->hitPos, lightDir);
         const auto shadowInfo = accel.intersect(shadowRay);
         if (!shadowInfo) {
-          color = PI * lambert->BRDF(-ray.direction, lightDir) *
+          const auto hitPrimitive = info->hitPrimitive;
+          color = PI * hitPrimitive->BRDF(-ray.direction, lightDir, info.value()) *
                   std::max(dot(lightDir, info->hitNormal), 0.0f);
         }
 
