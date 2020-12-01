@@ -8,11 +8,9 @@
 #include "mogumogu/shape/shape.hpp"
 
 class Primitive {
- private:
+ public:
   const std::shared_ptr<Shape> shape;
   const std::shared_ptr<Material> material;
-
- public:
   Primitive(const std::shared_ptr<Shape>& shape, const std::shared_ptr<Material>& material);
 
   std::optional<IntersectInfo> intersect(const Ray& ray) const;
