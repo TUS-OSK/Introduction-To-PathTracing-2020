@@ -21,6 +21,8 @@ target_sources(mogumogu PRIVATE
     include/mogumogu/shape/shape.hpp
     include/mogumogu/shape/sphere.hpp
     src/shape/sphere.cpp
+    include/mogumogu/shape/plane.hpp
+    src/shape/plane.cpp
 
     include/mogumogu/material/material.hpp
     include/mogumogu/material/lambert.hpp

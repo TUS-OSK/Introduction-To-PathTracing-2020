@@ -5,6 +5,7 @@
 #include "mogumogu/camera/pinhole.hpp"
 #include "mogumogu/core/constant.hpp"
 #include "mogumogu/material/lambert.hpp"
+#include "mogumogu/shape/plane.hpp"
 #include "mogumogu/shape/sphere.hpp"
 
 int main() {
@@ -13,18 +14,18 @@ int main() {
   const Vec3 lightDir = normalize(Vec3(1, 1, 1));
 
   const auto film = std::make_shared<Film>(width, height);
-  PinholeCamera camera(Vec3(0, 0, 5), Vec3(0, 0, -1), film, PI_DIV_2);
+  PinholeCamera camera(Vec3(0, 1, 5), Vec3(0, 0, -1), film, PI_DIV_2);
 
-  const auto sphere1 = std::make_shared<Sphere>(Vec3(0, 0, 0), 1.0);
-  const auto sphere2 = std::make_shared<Sphere>(Vec3(1, 0, 1), 1.0);
-  const auto sphere3 = std::make_shared<Sphere>(Vec3(0, -10001, 0), 10000.0);
+  const auto sphere1 = std::make_shared<Sphere>(Vec3(0, 1, 0), 1.0);
+  const auto sphere2 = std::make_shared<Sphere>(Vec3(1, 1, 1), 1.0);
+  const auto plane = std::make_shared<Plane>(Vec3(-3, 0, -3), Vec3(6, 0, 0), Vec3(0, 0, 6));
 
   const auto lambert = std::make_shared<Lambert>(Vec3(0.9));
 
   LinearAccel accel;
   accel.addPrimitive(Primitive(sphere1, lambert));
   accel.addPrimitive(Primitive(sphere2, lambert));
-  accel.addPrimitive(Primitive(sphere3, lambert));
+  accel.addPrimitive(Primitive(plane, lambert));
 
   for (int j = 0; j < height; ++j) {
     for (int i = 0; i < width; ++i) {
