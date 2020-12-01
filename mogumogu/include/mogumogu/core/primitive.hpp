@@ -8,12 +8,18 @@
 #include "mogumogu/shape/shape.hpp"
 
 class Primitive {
- public:
+ private:
   const std::shared_ptr<Shape> shape;
   const std::shared_ptr<Material> material;
+
+ public:
   Primitive(const std::shared_ptr<Shape>& shape, const std::shared_ptr<Material>& material);
 
   std::optional<IntersectInfo> intersect(const Ray& ray) const;
+
+  Vec3 BRDF(const Vec3& wo, const Vec3& wi, const IntersectInfo& info) const;
+  std::optional<std::tuple<Vec3, float>> sampleBRDF(const Vec3& wo,
+                                                    const IntersectInfo& info) const;
 };
 
 #endif
