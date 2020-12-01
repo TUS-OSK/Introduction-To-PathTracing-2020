@@ -9,3 +9,6 @@ target_link_libraries(draw_sphere_lambert PRIVATE mogumogu)
 
 add_executable(draw_multiple_sphere draw_multiple_sphere.cpp)
 target_link_libraries(draw_multiple_sphere PRIVATE mogumogu)
+
+add_executable(simple_shadow simple_shadow.cpp)
+target_link_libraries(simple_shadow PRIVATE mogumogu)
