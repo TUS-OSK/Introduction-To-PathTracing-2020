@@ -3,7 +3,7 @@
 LinearAccel::LinearAccel() {}
 
 std::optional<IntersectInfo> LinearAccel::intersect(const Ray& ray) const {
-  std::optional<IntersectInfo> ret = std::nullopt;
+  std::optional<IntersectInfo> ret;
 
   // return closest hit
   float t = ray.tmax;

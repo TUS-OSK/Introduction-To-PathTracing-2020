@@ -7,7 +7,7 @@ struct Vec3 {
   float elements[3];
 
   constexpr Vec3() noexcept : elements{0, 0, 0} {}
-  constexpr Vec3(float _x) noexcept : elements{_x, _x, _x} {}
+  constexpr explicit Vec3(float _x) noexcept : elements{_x, _x, _x} {}
   constexpr Vec3(float _x, float _y, float _z) noexcept : elements{_x, _y, _z} {}
 
   constexpr float x() const { return elements[0]; }
@@ -81,5 +81,16 @@ inline constexpr Vec3 cross(const Vec3& v1, const Vec3& v2) noexcept {
 
 // normalize
 inline constexpr Vec3 normalize(const Vec3& v) noexcept { return v / length(v); }
+
+// world to local transform
+inline constexpr Vec3 worldToLocal(const Vec3& v, const Vec3& lx, const Vec3& ly, const Vec3& lz) {
+  return Vec3(dot(v, lx), dot(v, ly), dot(v, lz));
+}
+
+// local to world transform
+inline constexpr Vec3 localToWorld(const Vec3& v, const Vec3& lx, const Vec3& ly, const Vec3& lz) {
+  return Vec3(dot(v, Vec3(lx.x(), ly.x(), lz.x())), dot(v, Vec3(lx.y(), ly.y(), lz.y())),
+              dot(v, Vec3(lz.z(), ly.z(), lz.z())));
+}
 
 #endif
