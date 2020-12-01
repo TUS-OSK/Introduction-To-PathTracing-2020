@@ -35,6 +35,9 @@ target_sources(mogumogu PRIVATE
     src/accel/accel.cpp
     include/mogumogu/accel/linear.hpp
     src/accel/linear.cpp
+
+    include/mogumogu/sampler/rng.hpp
+    src/sampler/rng.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
