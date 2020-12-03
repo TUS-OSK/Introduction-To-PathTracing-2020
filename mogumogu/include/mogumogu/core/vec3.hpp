@@ -14,7 +14,32 @@ struct Vec3 {
   constexpr float y() const { return elements[1]; }
   constexpr float z() const { return elements[2]; }
 
-  Vec3 operator-() const noexcept { return Vec3(-x(), -y(), -z()); }
+  constexpr Vec3 operator-() const noexcept { return Vec3(-x(), -y(), -z()); }
+
+  constexpr Vec3& operator+=(const Vec3& v) {
+    elements[0] += v.x();
+    elements[1] += v.y();
+    elements[2] += v.z();
+    return *this;
+  }
+  constexpr Vec3& operator-=(const Vec3& v) {
+    elements[0] -= v.x();
+    elements[1] -= v.y();
+    elements[2] -= v.z();
+    return *this;
+  }
+  constexpr Vec3& operator*=(const Vec3& v) {
+    elements[0] *= v.x();
+    elements[1] *= v.y();
+    elements[2] *= v.z();
+    return *this;
+  }
+  constexpr Vec3& operator/=(const Vec3& v) {
+    elements[0] /= v.x();
+    elements[1] /= v.y();
+    elements[2] /= v.z();
+    return *this;
+  }
 
   constexpr bool operator==(const Vec3& v) const noexcept {
     return x() == v.x() && y() == v.y() && z() == v.z();
