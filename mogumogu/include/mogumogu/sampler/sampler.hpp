@@ -3,7 +3,7 @@
 #include "mogumogu/sampler/rng.hpp"
 
 class Sampler {
- private:
+ protected:
   RNG rng;
 
  public:
