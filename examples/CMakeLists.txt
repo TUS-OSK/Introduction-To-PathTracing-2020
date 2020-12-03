@@ -12,3 +12,6 @@ target_link_libraries(draw_multiple_sphere PRIVATE mogumogu)
 
 add_executable(simple_shadow simple_shadow.cpp)
 target_link_libraries(simple_shadow PRIVATE mogumogu)
+
+add_executable(ssaa ssaa.cpp)
+target_link_libraries(ssaa PRIVATE mogumogu)
