@@ -38,6 +38,8 @@ target_sources(mogumogu PRIVATE
 
     include/mogumogu/sampler/rng.hpp
     src/sampler/rng.cpp
+    include/mogumogu/sampler/sampler.hpp
+    src/sampler/sampler.cpp
 )
 
 option(MOGUMOGU_TEST "Build the tests" ON)
