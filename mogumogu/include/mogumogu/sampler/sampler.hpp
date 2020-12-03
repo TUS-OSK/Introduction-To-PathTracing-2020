@@ -10,7 +10,7 @@ class Sampler {
   Sampler();
 
   void setSeed(uint64_t seed);
-  virtual float getNext() const = 0;
+  virtual float getNext() = 0;
 };
 
 #endif
